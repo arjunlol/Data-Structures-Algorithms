@@ -24,7 +24,6 @@ class SinglyLinkedList {
       }
       current.next = node;
     }
+    this.length++;
   }
 }
-
-let linkyList = new SinglyLinkedList()

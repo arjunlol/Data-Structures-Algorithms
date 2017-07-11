@@ -1,6 +1,4 @@
-//first create unsorted linked list
-//make print method
-//make removeDup method
+//O(n2) time & O(1) space with no buffer
 
 class Node {
   constructor(data) {
@@ -53,14 +51,15 @@ class SinglyLinkedList {
     map[current.data] = true
     //start at head loop through until reach null tail
     while(current != null) {
-      //if havn't seen value, add to hash table
-      if (current.next && !map[current.next.data]) {
-        map[current.next.data] = true //value has been seen
-      } else {
-      //if next value seen, remove duplicate node
-      //if tail dup, set next to null
-        current.next = current.next ? current.next.next : null
-        this.length--
+      let runner = current
+      //make another runner pointer
+      while(runner.next != null) {
+        if (current.data === runner.next.data) {
+          runner.next = runner.next.next;
+          this.length--;
+        } else {
+          runner = runner.next;
+        }
       }
       current = current.next
     }
