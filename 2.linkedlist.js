@@ -27,3 +27,5 @@ class SinglyLinkedList {
     this.length++;
   }
 }
+
+module.exports = SinglyLinkedList;
