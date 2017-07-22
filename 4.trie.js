@@ -47,7 +47,7 @@ class Trie {
     return node.isEnd()
   }
 
-  print(cb) {
+  print() {
     let words = [];
     let stringy = new String;
     let search = function(node, string) {
